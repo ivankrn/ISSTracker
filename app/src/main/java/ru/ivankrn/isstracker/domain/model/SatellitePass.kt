@@ -1,4 +1,4 @@
-package ru.ivankrn.isstracker.model
+package ru.ivankrn.isstracker.domain.model
 
 data class SatellitePass(
     val noradId: Int,

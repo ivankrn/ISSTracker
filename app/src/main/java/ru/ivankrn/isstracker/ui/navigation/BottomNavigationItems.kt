@@ -7,7 +7,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class BottomNavigationItems (
     val route: String,
-    val title: String? = null,
+    val title: String,
     val icon: ImageVector? = null
 ) {
     data object MainScreenList : BottomNavigationItems(

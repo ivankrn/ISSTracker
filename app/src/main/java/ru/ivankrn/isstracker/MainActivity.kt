@@ -10,13 +10,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import org.koin.androidx.compose.koinViewModel
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import ru.ivankrn.isstracker.repository.SatellitePassFakeRepository
+
 import ru.ivankrn.isstracker.ui.navigation.BottomNavigationItems
 import ru.ivankrn.isstracker.ui.screens.SatellitePassDetailsScreen
 import ru.ivankrn.isstracker.ui.screens.SatellitePassesListScreen
@@ -43,7 +44,7 @@ fun ApplicationScreen() {
 
 @Composable
 fun AppNavigation(navigationController: NavHostController) {
-    val viewModel = SatellitePassViewModel(SatellitePassFakeRepository())
+    val viewModel = koinViewModel<SatellitePassViewModel>()
     Scaffold(
         bottomBar = {
             BottomBar(
@@ -104,7 +105,7 @@ fun BottomBar(
         screens.forEach { screen ->
             NavigationBarItem(
                 label = {
-                    Text(text = screen.title!!)
+                    Text(text = screen.title)
                 },
                 icon = {
                     Icon(imageVector = screen.icon!!, contentDescription = "")
