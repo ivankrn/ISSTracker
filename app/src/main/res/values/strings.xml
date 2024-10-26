@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ISSTracker</string>
+    <string name="satellite_pass_when">Когда: %1$s</string>
+    <string name="satellite_pass_is_visible">Будет видно: %1$s</string>
+    <string name="satellite_pass_altitude">Высота над горизонтом (в градусах): %1$s</string>
+    <string name="satellite_pass_azimuth">Азимут (угол между спутником и севером, в градусах): %1$s</string>
+    <string name="satellite_pass_azimuth_octant">Октант азимута: %1$s</string>
+    <string name="satellite_pass_datetime">Дата и время (в UTC): %1$s</string>
+    <string name="satellite_pass_is_sunlit">Освещен солнцем: %1$s</string>
+    <string name="satellite_pass_details_info_header">Информация о проходе спутника</string>
+    <string name="satellite_pass_rise_phase">Восход</string>
+    <string name="satellite_pass_culmination_phase">Кульминация</string>
+    <string name="satellite_pass_set_phase">Заход</string>
+    <string name="upcoming_iss_passes_header">Ближайшие прохождения МКС:</string>
 </resources>
