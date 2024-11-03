@@ -15,11 +15,11 @@ import androidx.compose.ui.unit.dp
 
 import ru.ivankrn.isstracker.R
 import ru.ivankrn.isstracker.domain.model.AstronomyEvent
-import ru.ivankrn.isstracker.domain.model.SatellitePass
+import ru.ivankrn.isstracker.domain.model.SatellitePassWithEvents
 
 @Composable
 fun SatellitePassDetailsScreen(
-    satellitePass: SatellitePass
+    satellitePass: SatellitePassWithEvents
 ) {
     val dateTimeFormatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy - hh:mm")
 

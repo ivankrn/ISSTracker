@@ -1,7 +1,8 @@
 package ru.ivankrn.isstracker.ui.screens
 
-import android.widget.Toast
 import java.time.format.DateTimeFormatter
+
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -17,13 +18,11 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat.getString
 
 import ru.ivankrn.isstracker.R
-import ru.ivankrn.isstracker.domain.model.SatellitePassWithEvents
 import ru.ivankrn.isstracker.viewModel.SatellitePassViewModel
 
 @Composable
-fun SatellitePassesListScreen(
-    viewModel: SatellitePassViewModel,
-    onNavigateToDetails: (SatellitePassWithEvents) -> Unit
+fun FavoriteSatellitePassesListScreen(
+    viewModel: SatellitePassViewModel
 ) {
     val state = viewModel.viewState
     val mContext = LocalContext.current
@@ -33,7 +32,7 @@ fun SatellitePassesListScreen(
         modifier = Modifier.background(MaterialTheme.colorScheme.surface)
     ) {
         Text(
-            text = stringResource(R.string.upcoming_iss_passes_header),
+            text = stringResource(R.string.favorites_header),
             style = MaterialTheme.typography.headlineLarge,
             color = MaterialTheme.colorScheme.onSurface
         )
@@ -42,34 +41,20 @@ fun SatellitePassesListScreen(
         Surface(
             modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.surface)
         ) {
-            state.error?.let {
-                Text(text = it)
-            }
 
             LazyColumn(
                 contentPadding = PaddingValues(4.dp)
             ) {
-                items(state.items) { satellitePassWithEvents ->
+                items(state.favoriteItems) { satellitePassWithEvents ->
                     SatellitePassCard(
                         dateTimeFormatter,
                         satellitePassWithEvents,
-                        onCardClick = {
-                            viewModel.updateSelectedSatellitePass(satellitePassWithEvents)
-                            onNavigateToDetails(satellitePassWithEvents)
-                        },
                         onCardLongClick = {
                             if (satellitePassWithEvents.satellitePass.isFavorite) {
                                 viewModel.removeFromFavorites(satellitePassWithEvents)
                                 Toast.makeText(
                                     mContext,
                                     getString(mContext, R.string.removed_from_favorites),
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            } else {
-                                viewModel.addToFavorites(satellitePassWithEvents)
-                                Toast.makeText(
-                                    mContext,
-                                    getString(mContext, R.string.added_to_favorites),
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }

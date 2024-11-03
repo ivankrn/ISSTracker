@@ -12,4 +12,15 @@
     <string name="satellite_pass_culmination_phase">Кульминация</string>
     <string name="satellite_pass_set_phase">Заход</string>
     <string name="upcoming_iss_passes_header">Ближайшие прохождения МКС:</string>
+    <string name="save_settings_button">Сохранить</string>
+    <string name="settings_header">Настройки</string>
+    <string name="latitude_label">Широта</string>
+    <string name="longitude_label">Долгота</string>
+    <string name="latitude_textfield_placeholder">56.838924</string>
+    <string name="longitude_textfield_placeholder">60.6057018</string>
+    <string name="settings_have_been_saved">Настройки были сохранены!</string>
+    <string name="favorites_header">Избранное</string>
+    <string name="added_to_favorites">Добавлено в избранное</string>
+    <string name="removed_from_favorites">Удалено из избранного</string>
+    <string name="lat_lon_validate_message">Долгота и широта должны быть указаны</string>
 </resources>
