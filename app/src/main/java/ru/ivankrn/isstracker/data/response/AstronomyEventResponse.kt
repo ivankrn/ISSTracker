@@ -1,7 +1,6 @@
 package ru.ivankrn.isstracker.data.response
 
 import java.math.BigDecimal
-import java.time.ZonedDateTime
 import com.google.gson.annotations.SerializedName
 
 import ru.ivankrn.isstracker.domain.model.AzimuthOctant
@@ -14,7 +13,7 @@ data class AstronomyEventResponse(
     @SerializedName("az_octant")
     val azimuthOctant: AzimuthOctant,
     @SerializedName("utc_datetime")
-    val utcDatetime: ZonedDateTime,
+    val utcDatetime: String,
     @SerializedName("is_sunlit")
     val isSunlit: Boolean,
     @SerializedName("is_visible")
