@@ -1,5 +1,6 @@
 package ru.ivankrn.isstracker.ui.screens
 
+import java.time.format.DateTimeFormatter
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -11,10 +12,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+
 import ru.ivankrn.isstracker.R
-import ru.ivankrn.isstracker.model.AstronomyEvent
-import ru.ivankrn.isstracker.model.SatellitePass
-import java.time.format.DateTimeFormatter
+import ru.ivankrn.isstracker.domain.model.AstronomyEvent
+import ru.ivankrn.isstracker.domain.model.SatellitePass
 
 @Composable
 fun SatellitePassDetailsScreen(
@@ -92,11 +93,11 @@ fun SatellitePassPhaseCard(
                     style = MaterialTheme.typography.bodyLarge
                 )
                 Text(
-                    text = stringResource(R.string.satellite_pass_azimuth, data.az),
+                    text = stringResource(R.string.satellite_pass_azimuth, data.azimuth),
                     style = MaterialTheme.typography.bodyLarge
                 )
                 Text(
-                    text = stringResource(R.string.satellite_pass_azimuth_octant, data.azOctant),
+                    text = stringResource(R.string.satellite_pass_azimuth_octant, data.azimuthOctant),
                     style = MaterialTheme.typography.bodyLarge
                 )
                 Text(
